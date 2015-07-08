@@ -1,0 +1,5 @@
+_assetic:
+    resource: .
+    type: assetic
+_app:
+    resource: /home/valerie/workspace/dev/Symfony/findWorker/app/config/routing_dev.yml
