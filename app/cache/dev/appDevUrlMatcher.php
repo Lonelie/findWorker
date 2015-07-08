@@ -127,6 +127,29 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // find_worker_homepage
+        if ($pathinfo === '/homepage') {
+            return array (  '_controller' => 'FindWorkerBundle\\Controller\\MainController::homepageAction',  '_route' => 'find_worker_homepage',);
+        }
+
+        if (0 === strpos($pathinfo, '/project')) {
+            // find_worker_new
+            if ($pathinfo === '/project/new') {
+                return array (  '_controller' => 'FindWorkerBundle\\Controller\\ProjectController::newAction',  '_route' => 'find_worker_new',);
+            }
+
+            // find_worker_list
+            if ($pathinfo === '/project/list') {
+                return array (  '_controller' => 'FindWorkerBundle\\Controller\\ProjectController::listAction',  '_route' => 'find_worker_list',);
+            }
+
+        }
+
+        // apis_homepage
+        if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'apis_homepage')), array (  '_controller' => 'ApisBundle\\Controller\\DefaultController::indexAction',));
+        }
+
         // homepage
         if ($pathinfo === '/app/example') {
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);

@@ -1,3 +1,7 @@
+find_worker_homepage:
+    path:     /homepage
+    defaults: { _controller: FindWorkerBundle:Main:homepage }
+
 #Jeu de route project
 find_worker_project:
     resource: "@FindWorkerBundle/Resources/config/routing/project.yml"
