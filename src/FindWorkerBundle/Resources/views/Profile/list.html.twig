@@ -1,0 +1,39 @@
+{% extends "FindWorkerBundle::layout.html.twig" %}
+
+{% block content %}
+</header>
+<div class="profils">
+<div class="wrapper">
+
+<h3>Liste des profils</h3>
+
+<div class="profils-container">
+<ul class="profils-list">
+{% for user in users %}
+    <li class="profils-item result-list-item">
+        <div class="profils-item-container">
+            <div class="profils-photo-container">
+                <div class="profils-photo" style="background:url('{{ asset( user.avatar_url ) }}'); background-size:cover; background-position:50% 50%;"></div>
+            </div>
+            <div class="profils-desc">
+                <p class="profils-title">{{ user.name }}</p>
+
+                <div class="profils-mail-container">
+                    <p class="profils-subtitle">Mail :<span class="profils-mail">{{ user.email }}</span></p>
+                </div>
+                </div>
+            <div class="clearfix"></div>
+            <a href="{{ path('find_worker_profiles_detail', {'login':user.login}) }}" class="profils-cta">Découvrir le profil</a>
+        </div>
+    </li>
+  {% endfor %}
+
+</ul>
+ <div class="clearfix"></div>
+
+<ul class="result-navigation"></ul>
+</div>
+
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "FindWorkerBundle::layout.html.twig" %}
+
+
+
+{% block content %}
+<div class="header-title">
+    <h2>
+        Recherche de profil
+    </h2>
+</div>
+</header>
+<div class="wrapper">
+    <div class="line-page">
+        <span>RECHERCHER LE PROFIL</span>
+        <br/>QUI VOUS <strong>CORRESPOND</strong>
+    </div>
+
+    {{ form(form,  {'attr': {'class': 'search-form'}}) }}
+
+
+</div>
+{% endblock %}
+

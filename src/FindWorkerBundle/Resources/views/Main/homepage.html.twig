@@ -1,7 +1,27 @@
-{% extends "StoreFrontendBundle::layout.html.twig" %}
+{% extends "FindWorkerBundle::layout.html.twig" %}
 
 {% block content %}
-    <div class="wrapper">
-    <h1>Findworkers</h1>
+        <div class="header-title">
+            <h2>
+                Rechercher le profil qui vous <span>correspond</span>
+            </h2>
+            <a href="/profiles/search" class="header-start">Commencer votre recherche</a>
+        </div>
+
+    </header>
+
+        <div class="home">
+        <div class="wrapper">
+            <h3>Qui sommes-nous</h3>
+
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet blanditiis dolorum exercitationem explicabo facere inventore ipsa labore nostrum odio ullam? Accusantium architecto cumque, doloribus harum laudantium nihil nobis possimus reiciendis.
+            </p>
+
+            <a href="/contact">
+                Contactez-nous
+            </a>
+        </div>
+    </div>
 
 {% endblock %}

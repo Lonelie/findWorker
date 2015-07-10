@@ -1,7 +1,44 @@
+{% extends "FindWorkerBundle::layout.html.twig" %}
+
+{% block content %}
+
+</header>
+<div class="projets">
+<div class="wrapper">
+<h3>Liste des projets</h3>
+
+<form action="response.php" method="POST" class="search-form">
+    <input type="text" placeholder="affinez votre recherche" class="add-competence-input" />
+    <a href="" class="add-competences">+</a>
+    <div class="clearfix"></div>
+    <div class="all-competences list"></div>
+    <div class="clearfix"></div>
+</form>
+
+<div class="projets-container">
+<ul class="projets-list">
 {% for project in projects %}
-    <p>
-    <strong>titre</strong> : {{ project.title }}<br>
-    <strong>description</strong> : {{ project.description }}<br>
-    <strong>compétences </strong>: {{ project.skills }}<br>
-    </p>
-{% endfor %}
+    <li class="projets-item result-list-item">
+        <div class="projets-photo-container">
+            <div class="projets-photo" style="background:url('http://lorempixel.com/400/400/business/'); background-size:cover; background-position:50% 50%;""></div>
+        </div>
+        <div class="projets-desc">
+            <p class="projets-title">{{ project.title }}</p>
+
+            <p class="projets-content">
+                {{ project.description }}
+            </p>
+            <ul class="keyword-list">
+				{{ project.skills }}
+            </ul>
+            <a href="{{ path('find_worker_project_detail', {'id': project.id}) }} }}" class="projets-cta">Découvrir le projet</a>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+</div>
+
+</div>
+</div>
+
+{% endblock %}

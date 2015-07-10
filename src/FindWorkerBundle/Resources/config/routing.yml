@@ -2,7 +2,16 @@ find_worker_homepage:
     path:     /homepage
     defaults: { _controller: FindWorkerBundle:Main:homepage }
 
-#Jeu de route project
-find_worker_project:
+find_worker_contact:
+    path:     /contact
+    defaults: { _controller: FindWorkerBundle:Main:contact }
+
+# Jeu de route projects
+find_worker:
     resource: "@FindWorkerBundle/Resources/config/routing/project.yml"
-    prefix:   /project
+    prefix:   /projects
+
+# Jeu de route profiles
+find_worker_profiles:
+    resource: "@FindWorkerBundle/Resources/config/routing/profile.yml"
+    prefix:   /profiles

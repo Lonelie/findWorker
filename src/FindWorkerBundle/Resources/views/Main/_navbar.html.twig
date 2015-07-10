@@ -1,26 +1,39 @@
 {% block navbar %}
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Project name</a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ path('store_frontend_homepage') }}">Home</a></li>
-                    <li><a href="">Catégories</a></li>
-                    <li><a href="">Produits</a></li>
-                    <li><a href="{{ path('store_frontend_contact') }}">Contact</a></li>
-                    <li><a href="{{ path('store_frontend_concept') }}">Concept</a></li>
-                    <li><a href="{{ path('store_frontend_mention') }}">Mention Légale</a></li>
-                </ul>
-            </div><!--/.nav-collapse -->
+  <header class="header page-home">
+        <h1 class="logo">
+            <a href="./">
+                <img src="{{ asset('bundles/findworker/images/general/logo.png') }}" alt="FindWorker"/>
+                <span>FindWorker</span>
+            </a>
+        </h1>
+
+        <a href="#" class="disable menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+
+        <div class="menu">
+            <a href="#" class="menu-close">
+                <span></span>
+                <span></span>
+            </a>
+            <ul class="menu-list">
+                <li class="menu-item active">
+                    <a href="/homepage">Accueil</a>
+                </li>
+                <li class="menu-item">
+                    <a href="/profiles/search">Rechercher un profil</a>
+                </li>
+                <li class="menu-item">
+                    <a href="/contact">Contact</a>
+                </li>
+                <li class="menu-item">
+                    <a href="/projects/new">Déposer une offre</a>
+                </li>
+            </ul>
         </div>
-    </nav>
+
+
 {% endblock %}

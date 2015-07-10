@@ -1,0 +1,57 @@
+{% extends "FindWorkerBundle::layout.html.twig" %}
+
+{% block content %}
+</header>
+
+<div class="profil">
+    <div class="wrapper">
+        <a href="/profiles/list/php" class="link-back">Revenir à liste des profils</a>
+        <h3>Profil de {{ user.name }}</h3>
+
+        <div class="profil-detail-container">
+            <div class="profil-detail">
+                <div class="profil-infos">
+                    <div class="profil-infos-left">
+                        <div class="repo">
+                            <p>
+                                {{ user["public_repos"] }}
+                                <span>Repositories</span>
+                            </p>
+                        </div>
+
+                        <div class="followers">
+                            <p>
+                                {{ user["followers"] }}
+                                <span>Followers</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="profil-infos-right">
+                        <h4>{{ user.name }}</h4>
+                        <div class="profil-infos-link">
+                            <img src="{{ asset('bundles/findworker/images/icons/mail.png') }}" alt="Mail"/>
+                            <span>{{ user["email"] }}</span>
+                        </div>
+                        <div class="profil-infos-link">
+                            <img src="{{ asset('bundles/findworker/images/icons/github.png') }}" alt="Profil Github"/>
+                            <span><a href="{{ user["html_url"] }}">{{ user["html_url"] }}</a></span>
+                        </div>
+                        <div class="profil-infos-link">
+                            <img src="{{ asset('bundles/findworker/images/icons/marker.png') }}" alt="Lieu"/>
+                            <span>{{ user["location"] }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profil-photo-container">
+                    <div class="profil-photo" style="background:url('{{ asset( user.avatar_url ) }}'); background-size:cover; background-position:50% 50%;"></div>
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+ {%endblock%}
+

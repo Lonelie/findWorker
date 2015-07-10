@@ -1,0 +1,36 @@
+{% extends "FindWorkerBundle::layout.html.twig" %}
+
+{% block content %}
+</header>
+
+<div class="projet">
+    <div class="wrapper">
+        <a href="/projects/list" class="link-back">Revenir a liste de projets</a>
+        <h3>{{ project.title }}</h3>
+
+        <div class="projet-detail">
+            <h4>Description</h4>
+
+            <div class="projet-detail-desc">
+                {{ project.description }}
+            </div>
+
+            <h4>Competences demandees</h4>
+
+            <ul class="keyword-list">
+                <li class="keyword-item keyword-style">{{ project.skills }}</li>
+            </ul>
+
+            <ul style="text-align:center;">
+                <li>
+                    <a href="{{path('find_worker_project_edit', {'id': project.id})}}" class="link-back">editer ce projet</a>
+                </li>
+                <li>
+                    <a href="{{path('find_worker_project_remove', {'id': project.id})}}" class="link-back">supprimer ce projet</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock%}

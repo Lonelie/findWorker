@@ -2,7 +2,7 @@
 parameters:
     database_host: 127.0.0.1
     database_port: null
-    database_name: symfony
+    database_name: findworker
     database_user: root
     database_password: null
     mailer_transport: smtp
@@ -10,3 +10,6 @@ parameters:
     mailer_user: null
     mailer_password: null
     secret: df30816a4860d7eabcd32d36cd85de6b44369b43
+    sass.bin: /usr/local/bin/sass
+    compass.bin: /usr/bin/compass
+    ruby.bin: /usr/local/rvm/rubies/ruby-2.0.0-p598/bin/ruby

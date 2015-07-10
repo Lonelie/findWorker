@@ -1,0 +1,11 @@
+# FindWorkerBundle/Resources/config/validation.yml
+
+FindWorkerBundle\Entity\Project:
+    Project:
+        properties:
+            title:
+                - NotBlank: ~
+            description:
+                - NotBlank: ~
+            skills:
+                - NotBlank: ~

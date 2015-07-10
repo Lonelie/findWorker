@@ -1,0 +1,11 @@
+find_worker_profiles_search:
+    path:     /search
+    defaults: { _controller: FindWorkerBundle:Profile:search }
+
+find_worker_profiles_list:
+    path:     /list/{languages}
+    defaults: { _controller: FindWorkerBundle:Profile:list }
+
+find_worker_profiles_detail:
+    path:     /detail/{login}
+    defaults: { _controller: FindWorkerBundle:Profile:detail }

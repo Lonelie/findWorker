@@ -20,4 +20,13 @@ class MainController extends Controller
     {
         return $this->render('FindWorkerBundle:Main:homepage.html.twig');
     }
+
+    /**
+     * Page contact
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function contactAction()
+    {
+        return $this->render('FindWorkerBundle:Main:contact.html.twig');
+    }
 }

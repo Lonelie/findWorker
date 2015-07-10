@@ -1,0 +1,49 @@
+   {% block footer %}
+    <footer>
+        <div class="partners">
+            <div class="partners-container">
+                <h3>Nos partenaires</h3>
+
+                <ul class="partners-list">
+                    <li class="partners-item">
+                        <a href="http://linkedin.com/" target="_blank">
+                            <img src="{{ asset('bundles/findworker/images/partners/linkedin.png') }}" alt="LinkedIn"/>
+                        </a>
+                    </li>
+                    <li class="partners-item">
+                        <a href="http://github.com" target="_blank">
+                            <img src="{{ asset('bundles/findworker/images/partners/github.png') }}" alt="Github"/>
+                        </a>
+                    </li>
+                    <li class="partners-item">
+                        <a href="http://dribbble.com/" target="_blank">
+                            <img src="{{ asset('bundles/findworker/images/partners/dribbble.png') }}" alt="Dribbble"/>
+                        </a>
+                    </li>
+                    <li class="partners-item">
+                        <a href="http://behance.net" target="_blank">
+                            <img src="{{ asset('bundles/findworker/images/partners/behance.png') }}" alt="Behance"/>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <ul class="footer-infos">
+            <li class="footer-infos-item">
+                Copyright 2015
+            </li>
+            <li class="footer-infos-item">
+                <a href="#">
+                    Mentions légales
+                </a>
+            </li>
+            <li class="footer-infos-item">
+                <a href="/contact">
+                    Nous contacter
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+{% endblock %}

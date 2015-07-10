@@ -25,14 +25,14 @@ class ProjectType extends AbstractType
                     'pattern' => '[a-zA-Z ]{5,}'
                 )
             ))
-            ->add('description', null, array(
-                'label' => 'Description du projet',
-                'required' => true,
-                'attr' => array(
-                    'class' => 'form-control',
-                    'cols' => 10,
-                    'rows' => 5,
-                    'placeholder' => 'Description du projet'
+                ->add('description', null, array(
+                    'label' => 'Description du projet',
+                    'required' => true,
+                    'attr' => array(
+                        'class' => 'form-control',
+                        'cols' => 10,
+                        'rows' => 5,
+                        'placeholder' => 'Description du projet'
                 )
             ))
             ->add('skills', null, array(

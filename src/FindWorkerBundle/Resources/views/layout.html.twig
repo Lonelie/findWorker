@@ -1,23 +1,31 @@
-{% extends "::base.html.twig" %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FindWorker</title>
+        {#<meta name="description" content="{% block meta_description %}">#}
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-
-{% block javascripts %}
-    {{ parent() }}
-    {# asset() pointe dans le dossier /web  #}
-    <script src="{{ asset("js/main.js") }}"></script>
-{% endblock %}
-
-{% block stylesheets %}
-    {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-{% endblock %}
-
+        <link rel="stylesheet" href="{{ asset('bundles/findworker/css/style.css') }}" />
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    </head>
+<body>
 {% block body %}
-    <h1>FindWorkers</h1>
 
     {# Inclus la vue partiel nav#}
     {{ include('FindWorkerBundle:Main:_navbar.html.twig') }}
 
     {% block content %}
+    {% form_theme form 'FindWorkerBundle:form:fields.html.twig' %}
     {% endblock %}
+
+    {{ include('FindWorkerBundle:Main:_footer.html.twig') }}
 {% endblock %}
+
+    <script src="{{ asset('bundles/findworker/js/vendor/jquery.min.js') }}"></script>
+    <script src="{{ asset('bundles/findworker/js/vendor/TweenMax.min.js') }}"></script>
+    <script src="{{ asset('bundles/findworker/js/main.js') }}"></script>
+</body>
+</html>

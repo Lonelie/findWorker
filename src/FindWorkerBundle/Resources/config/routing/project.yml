@@ -1,7 +1,19 @@
-find_worker_new:
+find_worker_project_new:
     path:     /new
     defaults: { _controller: FindWorkerBundle:Project:new }
 
-find_worker_list:
+find_worker_project_list:
     path:     /list
     defaults: { _controller: FindWorkerBundle:Project:list }
+
+find_worker_project_detail:
+    path:     /detail/{id}
+    defaults: { _controller: FindWorkerBundle:Project:detail }
+
+find_worker_project_edit:
+    path:     /edit/{id}
+    defaults: { _controller: FindWorkerBundle:Project:edit }
+
+find_worker_project_remove:
+    path:     /remove/{id}
+    defaults: { _controller: FindWorkerBundle:Project:remove }
