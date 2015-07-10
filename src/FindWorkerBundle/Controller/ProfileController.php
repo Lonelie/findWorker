@@ -16,7 +16,7 @@ class ProfileController extends Controller
         $form = $this->createFormBuilder($searchProfile)
             ->add('Skills', 'text', array(
                 'attr' => array(
-                    'placeholder' => 'Ajoutez une compétence',
+                    'placeholder' => 'php, java',
                     'class' => 'add-competence-input'
                 )
                 ))

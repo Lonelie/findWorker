@@ -1,12 +1,11 @@
 {% extends "FindWorkerBundle::layout.html.twig" %}
 
 {% block content %}
-<div class="header-title">
-    <h2>
-        Projet
-    </h2>
-</div>
-</header>
 
-    {{ form(form) }}
+</header>
+ <div class="wrapper">
+           <div class="form-projet-container">
+    {{ form(form, {'attr' : {'class' : 'form-projet'} }) }}
+</div>
+</div>
 {% endblock %}

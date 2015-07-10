@@ -8912,7 +8912,7 @@ h3 {
 .header {
   color: #fff;
   font-family: 'Pier sans';
-  height: 450px;
+  height: 350px;
   position: relative;
 }
 /* line 57, ../sass/_header.scss */
@@ -9077,7 +9077,7 @@ h3 {
   }
   /* line 216, ../sass/_header.scss */
   .header .menu .menu-list .menu-item {
-    margin: 0 15px;
+    margin: 0 10px;
   }
 }
 @media (max-width: 767px) {

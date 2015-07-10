@@ -1,11 +1,7 @@
 {% extends "FindWorkerBundle::layout.html.twig" %}
 
 {% block content %}
-<div class="header-title">
-    <h2>
-        Projet
-    </h2>
-</div>
+
 </header>
 
  <div class="wrapper">
@@ -14,14 +10,12 @@
                    <span>Vous avez un projet</span>
                    <br/>déposez le <strong>avec vos critères</strong>
                </div>
-   				{{ form_start(form) }}
+   				{{ form_start(form, {'attr' : { 'class' : 'form-projet'}}) }}
     			{{ form_errors(form) }}
 
     		{{ form_row(form.title) }}
     		{{ form_row(form.description) }}
     		{{ form_row(form.skills) }}
-    		{{ form_widget(form , { 'attr' : {'class' : 'form-projet'} }) }}
-            <input type="submit" value="Publier votre offre" />
             <div class="clearfix"></div>
 {{ form_end(form) }}
 

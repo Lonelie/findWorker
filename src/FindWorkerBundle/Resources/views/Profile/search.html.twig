@@ -3,26 +3,24 @@
 
 
 {% block content %}
-<div class="header-title">
-    <h2>
-        Recherche de profil
-    </h2>
-</div>
+
 </header>
 <div class="wrapper">
+    <div class="search">
     <div class="line-page">
         <span>RECHERCHER LE PROFIL</span>
         <br/>QUI VOUS <strong>CORRESPOND</strong>
     </div>
 
-    {{ form(form,  {'attr': {'class': 'search-form'}}) }}
+    {{ form_start(form,  {'attr': {'class': 'search-form'}}) }}
 
 	    {{ form_errors(form) }}
+        <div class="all-competences"></div>
 	    {{ form_widget(form) }}
-	    <a href="" class="add-competences">+</a>
         <div class="clearfix"></div>
 
     {{ form_end(form) }}
+</div>
 </div>
 {% endblock %}
 

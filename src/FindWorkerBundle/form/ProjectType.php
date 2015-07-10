@@ -48,7 +48,8 @@ class ProjectType extends AbstractType
             
             ->add('Valider', 'submit', array(
                 'attr' => array(
-                    'class' => 'btn btn-primary'
+                    'class' => 'btn-hover',
+                    'value' => 'Valider'
                 )
             ))
         ;

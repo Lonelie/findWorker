@@ -1,24 +1,16 @@
 {% extends "FindWorkerBundle::layout.html.twig" %}
 
 {% block content %}
-{{ render(controller('FindWorkerBundle:Project:search')) }}
-<div class="header-title">
-    <h2>
-        projet
-    </h2>
-</div>
+
+
 </header>
 <div class="projets">
 <div class="wrapper">
 <h3>Liste des projets</h3>
+<div class="search">
+    {{ render(controller('FindWorkerBundle:Project:search')) }}
+</div>
 
-<form action="response.php" method="POST" class="search-form">
-    <input type="text" placeholder="affinez votre recherche" class="add-competence-input" />
-    <a href="" class="add-competences">+</a>
-    <div class="clearfix"></div>
-    <div class="all-competences list"></div>
-    <div class="clearfix"></div>
-</form>
 
 <div class="projets-container">
 <ul class="projets-list">
