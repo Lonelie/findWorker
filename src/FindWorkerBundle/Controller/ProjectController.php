@@ -6,6 +6,7 @@ use FindWorkerBundle\Entity\Project;
 use FindWorkerBundle\Form\ProjectType;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 
 class ProjectController extends Controller
@@ -48,10 +49,22 @@ class ProjectController extends Controller
         );
 	}
 
-    public function listAction(Request $request)
+    public function listAction(Request $request, $skill)
     {
         $em = $this->getDoctrine()->getManager();
-        $listProject = $this->getDoctrine()->getRepository('FindWorkerBundle:Project')->findAll();
+
+        if($skill == null)
+        {
+            $listProject = $this->getDoctrine()->getRepository('FindWorkerBundle:Project')->findAll();
+        }
+        else
+        {
+            $listProject = $em->createQuery('SELECT project FROM FindWorkerBundle:Project project
+            WHERE project.skills LIKE :skill')
+                ->setParameter(':skill', '%'.$skill.'%')
+                ->getResult();
+
+        }
 
         return $this->render('FindWorkerBundle:Project:list.html.twig', array(
             'projects'=> $listProject
@@ -124,4 +137,26 @@ class ProjectController extends Controller
 
         return $this->redirectToRoute('find_worker_project_list');
     }
+    public function searchAction(Request $request)
+        {
+            $repository =  $this->getDoctrine()->getRepository('FindWorkerBundle:Project');
+            $form = $this->createFormBuilder()
+                ->setAction($this->generateUrl('find_worker_project_search'))
+                ->add('skill', 'text')
+                ->add('save', 'submit')
+                ->getForm();
+
+            $form->handleRequest($request);
+            if ($form->isValid()) {
+                return $this->redirectToRoute('find_worker_project_list', array('skill'=>$form->get('skill')->getData()), 301);
+            }
+
+            return $this->render("FindWorkerBundle:Project:search.html.twig",
+                [
+                    'form' => $form->createView()
+                ]
+            );
+
+
+        }
 }

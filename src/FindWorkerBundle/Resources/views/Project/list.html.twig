@@ -1,7 +1,12 @@
 {% extends "FindWorkerBundle::layout.html.twig" %}
 
 {% block content %}
-
+{{ render(controller('FindWorkerBundle:Project:search')) }}
+<div class="header-title">
+    <h2>
+        projet
+    </h2>
+</div>
 </header>
 <div class="projets">
 <div class="wrapper">
@@ -26,7 +31,7 @@
             <p class="projets-title">{{ project.title }}</p>
 
             <p class="projets-content">
-                {{ project.description }}
+                {{ project.description | slice(0, 200) }}
             </p>
             <ul class="keyword-list">
 				{{ project.skills }}

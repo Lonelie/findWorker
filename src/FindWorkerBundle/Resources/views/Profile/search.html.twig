@@ -17,7 +17,12 @@
 
     {{ form(form,  {'attr': {'class': 'search-form'}}) }}
 
+	    {{ form_errors(form) }}
+	    {{ form_widget(form) }}
+	    <a href="" class="add-competences">+</a>
+        <div class="clearfix"></div>
 
+    {{ form_end(form) }}
 </div>
 {% endblock %}
 

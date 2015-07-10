@@ -1,10 +1,11 @@
+
 find_worker_project_new:
     path:     /new
     defaults: { _controller: FindWorkerBundle:Project:new }
 
 find_worker_project_list:
-    path:     /list
-    defaults: { _controller: FindWorkerBundle:Project:list }
+    path:     /list/{skill}
+    defaults: { _controller: FindWorkerBundle:Project:list, skill:null }
 
 find_worker_project_detail:
     path:     /detail/{id}
@@ -17,3 +18,7 @@ find_worker_project_edit:
 find_worker_project_remove:
     path:     /remove/{id}
     defaults: { _controller: FindWorkerBundle:Project:remove }
+
+find_worker_project_search:
+    path:     /search
+    defaults: { _controller: FindWorkerBundle:Project:search }
